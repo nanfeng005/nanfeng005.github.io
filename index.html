@@ -3,185 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>临床医学数据分析项目展示 | PKU</title>
+    <title>临床数据分析项目 | PKU HSC</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <style>
-        :root {
-            --pku-red: #8C0000;
-            --bg-gray: #f8f9fa;
-            --text-dark: #2d3436;
-            --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        body {
-            font-family: 'Inter', 'Segoe UI', "Microsoft YaHei", sans-serif;
-            background-color: var(--bg-gray);
-            color: var(--text-dark);
-            line-height: 1.8;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--pku-red) 0%, #b30000 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 1px;
-        }
-
-        header p {
-            opacity: 0.9;
-            font-weight: 300;
-            font-size: 1.1rem;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: -60px auto 60px;
-            padding: 0 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 30px;
-            border-top: 5px solid var(--pku-red);
-        }
-
-        .tagline {
-            background-color: #fff5f5;
-            border-left: 4px solid var(--pku-red);
-            padding: 15px 20px;
-            font-style: italic;
-            color: #555;
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            color: var(--pku-red);
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; }
-        }
-
-        .stat-box {
-            text-align: center;
-            padding: 20px;
-            background: #fdfdfd;
-            border: 1px solid #eee;
-            border-radius: 10px;
-        }
-
-        .stat-box span {
-            display: block;
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--pku-red);
-        }
-
-        .visual-img {
-            width: 100%;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-            cursor: zoom-in;
-        }
-
-        .visual-img:hover {
-            transform: scale(1.02);
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--pku-red);
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s;
-            margin-top: 20px;
-        }
-
-        .btn:hover {
-            background: #b30000;
-            box-shadow: 0 5px 15px rgba(140, 0, 0, 0.3);
-            transform: translateY(-2px);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: #999;
-            font-size: 0.9rem;
-        }
+        :root { --pku-red: #8C0000; --bg-gray: #f4f7f6; --card-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-gray); color: #333; line-height: 1.7; margin: 0; }
+        header { background: linear-gradient(135deg, var(--pku-red) 0%, #600000 100%); color: white; padding: 60px 20px; text-align: center; }
+        .container { max-width: 900px; margin: -40px auto 60px; padding: 0 20px; }
+        .card { background: white; padding: 35px; border-radius: 12px; box-shadow: var(--card-shadow); margin-bottom: 25px; border-top: 4px solid var(--pku-red); }
+        h2 { color: var(--pku-red); border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 0; }
+        .code-header { background: #2d2d2d; color: #ccc; padding: 10px 15px; border-radius: 8px 8px 0 0; font-family: monospace; font-size: 0.9em; display: flex; justify-content: space-between; }
+        pre[class*="language-"] { margin-top: 0; border-radius: 0 0 8px 8px !important; font-size: 0.9em !important; }
+        .btn { display: inline-block; background: var(--pku-red); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: 600; transition: 0.3s; }
+        .btn:hover { opacity: 0.9; transform: translateY(-1px); }
+        .tagline { background: #fff5f5; border-left: 4px solid var(--pku-red); padding: 15px; font-style: italic; margin-bottom: 20px; font-size: 0.95em; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>数据科学与医学信息学 | 课程展示</h1>
-    <p>基于 PIC 临床数据库的重症监护患者分析研究</p>
+    <h1>临床医学数据处理与建模展示</h1>
+    <p>北京大学医学部 · 数据科学课程考核</p>
 </header>
 
 <div class="container">
-    
     <div class="card">
-        <h2>个人简介 & 项目背景</h2>
-        <p>本项目为 <strong>北京大学医学部</strong> 本科课程考核作业。旨在通过对重症医学公开数据库的深度挖掘，探索预测模型在临床决策支持中的应用。</p>
+        <h2>项目声明</h2>
         <div class="tagline">
             本项目数据基于 PIC (Paired Intensive Care) 数据库进行清洗，所有预处理脚本与 LaTeX 源码均已同步至 GitHub 仓库进行版本管理。
         </div>
-        <div class="grid">
-            <div class="stat-box">
-                <span>1,000+</span> 样本量 (Cohort Size)
-            </div>
-            <div class="stat-box">
-                <span>0.82</span> 模型 AUC 表现
-            </div>
-        </div>
+        <p>核心任务：利用重症监护数据预测急性肾损伤 (AKI) 风险。以下展示了关键的数据处理逻辑。</p>
     </div>
 
     <div class="card">
-        <h2>预测模型性能分析</h2>
-        <p>通过逻辑回归模型对 ICU 患者的急性肾损伤 (AKI) 进行风险评估。下图展示了模型在验证集上的 ROC 曲线：</p>
-        <div style="text-align: center; margin: 20px 0;">
-            <img src="roc_curve.png" alt="ROC Curve" class="visual-img">
-            <p style="font-size: 0.85rem; color: #777;">图 1: 模型分类性能评估 (Receiver Operating Characteristic)</p>
+        <h2>核心数据预处理代码</h2>
+        <p>本项目采用 Python 进行数据清洗、特征工程及逻辑回归建模：</p>
+        
+        <div class="code-header">
+            <span>data_processing.py</span>
+            <span>Python 3.10</span>
         </div>
+        <pre><code class="language-python">
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
+
+# 1. 数据读取与初步筛选
+df = pd.read_csv('pic_icu_data.csv')
+features = ['age', 'bmi', 'creatinine', 'map', 'aki_label']
+df = df[features]
+
+# 2. 数据预处理 (清洗与插补)
+# 对血肌酐等核心指标使用中位数填充缺失值
+df['creatinine'] = df['creatinine'].fillna(df['creatinine'].median())
+# 剔除极端的 BMI 异常值
+df = df[(df['bmi'] > 10) & (df['bmi'] < 60)]
+
+# 3. 特征缩放与数据集拆分
+X = df.drop('aki_label', axis=1)
+y = df['aki_label']
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X_scaled, y, test_size=0.2, random_state=42
+)
+
+# 4. 逻辑回归模型训练
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+print("模型训练完成，准备进行评估...")
+        </code></pre>
     </div>
 
     <div class="card" style="text-align: center;">
-        <h2>课程报告全文</h2>
-        <p>详细的算法实现细节、特征工程逻辑及统计学讨论请阅读 LaTeX 导出报告。</p>
-        <a href="report.pdf" target="_blank" class="btn">预览并下载 PDF 报告</a>
+        <h2>模型评估结果</h2>
+        <img src="roc_curve.png" alt="ROC Curve" style="width: 100%; max-width: 600px; margin: 20px 0; border-radius: 5px; border: 1px solid #ddd;">
+        <p><b>最终 AUC: 0.82</b> | 模型在验证集上展现了优异的判别性能。</p>
+        <br>
+        <a href="report.pdf" class="btn">下载完整 LaTeX 报告 (PDF)</a>
     </div>
-
 </div>
 
 <footer>
-    <p>© 2026 北京大学医学部 · 数据科学项目存档</p>
-    <p><a href="https://github.com/nanfeng005" style="color: #bbb; text-decoration: none;">GitHub Repository</a></p>
+    <p style="text-align: center; color: #999; padding-bottom: 30px;">© 2026 Peking University Health Science Center</p>
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
 
 </body>
 </html>
